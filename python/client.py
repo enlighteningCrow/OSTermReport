@@ -17,6 +17,9 @@ def main():
     success = False
     sock.connect_ex(sAddress)
     wordLenB = sock.recv(struct.calcsize('!i'), socket.MSG_WAITALL)
+    if not wordLenB:
+        print("Error: Failed to receive word length.")
+        return
     wordLen, = struct.unpack('!i', wordLenB)
 
     wordB = sock.recv(wordLen)
