@@ -2,7 +2,7 @@ import socket
 import struct
 from typing import List
 
-sAddress = ('127.0.0.1', 1943)
+sAddress = ('172.17.0.2', 1943)
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 size = struct.calcsize('c')
