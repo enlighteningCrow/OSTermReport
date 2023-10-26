@@ -25,6 +25,7 @@ def rpd(c: socket.socket, addr: Any, word: str):
     lenWordB = struct.pack("!i", len(word))
     c.sendall(lenWordB)
     c.sendall(bytes(word, "ascii"))
+    c.close()
 
 
 def main():
