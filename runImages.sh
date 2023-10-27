@@ -26,4 +26,4 @@ cd $(git rev-parse --show-toplevel)/hangmanPy/;python clientNative.py
 cd $(git rev-parse --show-toplevel)/hangmanJava/;gradle run
 
 #Use this command to run the java client natively
-cd $(git rev-parse --show-toplevel)/hangmanJava/app/build/classes/java/main;java hangman.Client
+cd $(git rev-parse --show-toplevel)/hangmanJava/app/build/classes/java/main;java hangman.ClientNative

@@ -4,8 +4,6 @@ import struct
 from typing import List
 
 sAddress = (socket.gethostbyname(socket.gethostname()), 1943)
-# print(f"{sAddress=}")
-# sAddress = ("hangman", 1947)
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 size = struct.calcsize("c")
@@ -21,7 +19,7 @@ all_characters = {chr(i) for i in range(ord("a"), ord("z") + 1)}
 def main():
     remaining_characters = all_characters.copy()
     success = False
-    print(sock.connect_ex(sAddress))
+    sock.connect_ex(sAddress)
     wordLenB = sock.recv(struct.calcsize("!i"), socket.MSG_WAITALL)
     (wordLen,) = struct.unpack("!i", wordLenB)
 
@@ -67,7 +65,4 @@ def main():
         print(f"You lost.\nThe word is {word}")
 
 
-# import os
-# for i in os.walk("/"):
-#     print(i)
 main()

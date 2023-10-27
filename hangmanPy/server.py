@@ -35,5 +35,4 @@ def main():
         threading.Thread(target=rpd, args=(a, b, random.choice(words))).start()
 
 
-# print(socket.gethostbyname(socket.gethostname()))
 main()

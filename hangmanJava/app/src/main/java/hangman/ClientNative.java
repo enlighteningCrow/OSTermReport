@@ -1,10 +1,11 @@
 package hangman;
 
-import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.util.Scanner;
 import java.util.TreeSet;
+import java.io.DataInputStream;
+import java.net.InetAddress;
 
 public class ClientNative implements AutoCloseable {
   void display(String st, int atmptR) {
@@ -26,7 +27,7 @@ public class ClientNative implements AutoCloseable {
     TreeSet<Character> remaining_characters = new TreeSet<Character>(all_characters);
     int attempts = 10;
     boolean success = false;
-    sock = new Socket("localhost", 1943);
+    sock = new Socket(InetAddress.getLocalHost(), 1943);
     in = new DataInputStream(sock.getInputStream());
     int len = in.readInt();
     byte[] b = new byte[len];
