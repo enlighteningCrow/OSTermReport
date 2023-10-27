@@ -32,6 +32,8 @@ public class Client implements AutoCloseable {
     byte[] b = new byte[len];
     int res = in.readNBytes(b, 0, len);
     assert (res == len);
+    in.close();
+    sock.close();
     String s = new String(b);
     StringBuffer c = new StringBuffer("-".repeat(len));
 

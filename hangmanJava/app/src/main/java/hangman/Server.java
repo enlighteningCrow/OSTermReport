@@ -33,6 +33,8 @@ public class Server {
             try {
                 out.writeInt(word.length());
                 out.write(word.getBytes());
+                out.close();
+                conn.close();
             } catch (IOException e) {
                 System.err.println("Unable to write to client.");
             }
